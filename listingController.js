@@ -1,12 +1,18 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
   function($scope, Listings) {
     $scope.listings = Listings;
-    $scope.detailedInfo = undefined;
+    $scope.detailedInfo = {};
     $scope.code;
     $scope.name;
     $scope.latitude;
     $scope.longitude;
     $scope.address;
+    $scope.showCode;
+    $scope.showName;
+    $scope.showLatitude;
+    $scope.showLongitude;
+    $scope.showAddress;
+
 
     /* 
       Implement these functions in the controller to make your application function 
@@ -37,14 +43,16 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     }
       $scope.listings.splice(index, 1);
     };
-    $scope.showDetails = function(index) {
-      $scope.listings({
-        code: $scope.code(index),
-        name: $scope.name(index),
-        latitude: $scope.latitude(index),
-        longitude: $scope.longitude(index),
-        address: $scope.address(index)
-      });
+    $scope.showDetails = function(entry) {
+      $scope.detailedInfo = entry;
+      /*var index = 0;
+      var index = $scope.listings.findIndex(x=>x.name === name)
+
+      for(var i = 0; i<$scope.listings.length; i++){
+        if(i == index){
+          $scope.showCode = $scope.listings[i].code;
+        }
+      }*/
     };
   }
 ]);

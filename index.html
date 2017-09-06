@@ -41,8 +41,10 @@
                   <td>{{entry.name}}</td>
                   <td></td>
                   <td>
-                  <button value="Show" class ="btn btn-primary" ng-click="showDetails($index)">Show Details</button>
+                  <button type="submit" value="Show" class ="btn btn-primary" ng-click="showDetails(entry)">Show Details</button>
                   </td>
+                  <!-- showDetails(name) vs showDetails($index)
+                  -->
                   <td>
                   <button value="Remove" class="btn btn-primary" ng-click="deleteListing($index)">Remove</button>
                   </td>
@@ -60,11 +62,25 @@
         <div class="col-md-6">
           <div class="jumbotron">
             <h2>Detailed Information</h2>
-            <p class="code">{{code}}</p>
-            <p class="name">{{entry.name}}</p>
-            <p class="latitude">{{entry.latitude}}</p>
-            <p class="longitude">{{entry.longitude}}</p>
-            <p class="address">{{entry.address}}</p>
+            <div>
+              <table>
+                <tr>
+                <td>Code: {{detailedInfo.code}}</td>
+                </tr>
+                <tr>
+                <td>Name: {{detailedInfo.name}}</td>
+                </tr>
+                <tr>
+                <td>Latitude: {{detailedInfo.coordinates.latitude}}</td>
+                </tr>
+                <tr>
+                <td>Longitude: {{detailedInfo.coordinates.longitude}}</td>
+                </tr>
+                <tr>
+                <td>Address: {{detailedInfo.address}}</td>
+                </tr>
+              </table>
+            </div>
 
             <!-- 
 
