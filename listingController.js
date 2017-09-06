@@ -34,10 +34,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
        $scope.longitude = '';
        $scope.address = '';
     };
-    $scope.deleteListing = function(index) {
+    $scope.deleteListing = function(entry) {
+
+    var index = 0;  
     var listArray = eval($scope.listings);
     for(var i = 0; i < listArray.length; i++ ) {
-      if( listArray[i] === index ) {
+      if( listArray[i].name === entry.name ) {
+        index = i;
         break;
       }
     }
@@ -45,14 +48,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     };
     $scope.showDetails = function(entry) {
       $scope.detailedInfo = entry;
-      /*var index = 0;
-      var index = $scope.listings.findIndex(x=>x.name === name)
-
-      for(var i = 0; i<$scope.listings.length; i++){
-        if(i == index){
-          $scope.showCode = $scope.listings[i].code;
-        }
-      }*/
     };
   }
 ]);
