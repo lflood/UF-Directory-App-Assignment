@@ -5,4 +5,35 @@
 .tableWrapper {
   max-height: 400px;
   overflow: auto;
+  background-color: #A3E4D7
+}
+
+.jumbotron{
+
+}
+
+body{
+	background-image: url("giff.gif");
+}
+
+h1{
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+ 	padding-left: 40px;
+    margin-right: 800px;
+}
+
+h2{
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+    padding-left: 30px;
+    margin-right: 100px;
+}
+
+h3{
+    background-color: #A3E4D7;
 }
