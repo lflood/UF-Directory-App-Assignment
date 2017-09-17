@@ -26,6 +26,7 @@ var requestHandler = function(request, response) {
    */
 };
 
+
 var server = http.createServer(requestHandler);
 server.listen(port, function() {
   //once the server is listening, this callback function is executed
